@@ -539,7 +539,7 @@ class TrendReq(object):
 
         result_df = pd.DataFrame(req_json)
 
-        return result_df
+        return req_json
 
     def top_charts(self, date, hl='en-US', tz=300, geo='GLOBAL'):
         """Request data from Google's Top Charts section and return a dataframe"""
