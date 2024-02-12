@@ -537,7 +537,7 @@ class TrendReq(object):
 
         final_json = [{ key: ts[key] for key in ts.keys() if key in wanted_keys} for ts in req_json ]
 
-        result_df = pd.DataFrame(final_json)
+        result_df = pd.DataFrame(req_json)
 
         return result_df
 
