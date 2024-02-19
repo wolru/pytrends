@@ -496,7 +496,6 @@ class TrendReq(object):
             url=TrendReq.TODAY_SEARCHES_URL,
             method=TrendReq.GET_METHOD,
             trim_chars=5,
-            params=forms,
             **self.requests_args
         )['default']['trendingSearchesDays'][0]['trendingSearches']
         # parse the returned json
