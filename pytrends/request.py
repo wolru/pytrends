@@ -500,7 +500,7 @@ class TrendReq(object):
             **self.requests_args
         )
         # parse the returned json
-        result_df = pd.DataFrame(trend['title'] for trend in req_json)
+        result_df = pd.DataFrame(trend['title'] for trend in req_json['default']['trendingSearchesDays'][0]['trendingSearches'])
         return req_json
 
     def realtime_trending_searches(self, pn='US', cat='all', count =300):
