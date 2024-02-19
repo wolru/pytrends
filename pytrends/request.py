@@ -498,10 +498,10 @@ class TrendReq(object):
             trim_chars=5,
             params=forms,
             **self.requests_args
-        )['default']['trendingSearchesDays'][0]['trendingSearches']
+        )
         # parse the returned json
         result_df = pd.DataFrame(trend['title'] for trend in req_json)
-        return result_df.iloc[:, -1]
+        return req_json
 
     def realtime_trending_searches(self, pn='US', cat='all', count =300):
         """Request data from Google Realtime Search Trends section and returns a dataframe"""
