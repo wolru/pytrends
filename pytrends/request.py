@@ -489,13 +489,14 @@ class TrendReq(object):
         result_df = pd.DataFrame(req_json[pn])
         return req_json
 
-    def today_searches(self, pn='US'):
+    def today_searches(self, pn='US', tz=360):
         """Request data from Google Daily Trends section and returns a dataframe"""
-        forms = {'ns': 15, 'geo': pn, 'tz': '-180', 'hl': self.hl}
+        forms = {'ns': 15, 'geo': pn, 'tz': tz, 'hl': self.hl}
         req_json = self._get_data(
             url=TrendReq.TODAY_SEARCHES_URL,
             method=TrendReq.GET_METHOD,
             trim_chars=5,
+            params=forms,
             **self.requests_args
         )['default']['trendingSearchesDays'][0]['trendingSearches']
         # parse the returned json
