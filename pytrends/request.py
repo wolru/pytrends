@@ -485,9 +485,9 @@ class TrendReq(object):
         req_json = self._get_data(
             url=TrendReq.TRENDING_SEARCHES_URL,
             method=TrendReq.GET_METHOD
-        )[pn]
-        result_df = pd.DataFrame(req_json)
-        return result_df
+        )
+        result_df = pd.DataFrame(req_json[pn])
+        return req_json
 
     def today_searches(self, pn='US'):
         """Request data from Google Daily Trends section and returns a dataframe"""
