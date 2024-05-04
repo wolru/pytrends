@@ -504,6 +504,7 @@ class TrendReq(object):
         return req_json
 
     def realtime_trending_searches(self, pn='US', cat='all', count =300):
+        
         """Request data from Google Realtime Search Trends section and returns a dataframe"""
         # Don't know what some of the params mean here, followed the nodejs library
         # https://github.com/pat310/google-trends-api/ 's implemenration
